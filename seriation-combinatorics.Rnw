@@ -115,7 +115,7 @@ options(tikzDefaultEngine = "xetex")
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 <<sscalc,include=FALSE,tidy=TRUE>>=
 parallelism <- 64  # number of cores for parallel testing of possible solutions
-secs_per_trial <- 0.005  # 5 millseconds per trial
+secs_per_trial <- 0.005  # 5 milliseconds per trial
 
 single_seriation_stats <- function(n) {
   total_trials <- (factorial(n) / 2)
@@ -160,7 +160,7 @@ print(xt2, include.rownames=FALSE)
 
 A typical characteristic of many combinatorial algorithms is that small changes in problem size can have massive changes in processing time.  13 assemblages will turn out to be the practical limit for direct enumeration, even given parallel processing with circa-2012 technology, with total processing time of nearly 3 days running 64 cores at full capacity.\footnote{Realistically, almost nobody would contemplate doing this, given the expense of the computing time relative to the value of guaranteeing the optimal solution, but the hypothetical example demonstrates that such solutions are \emph{feasible}.}  Problems involving 14 and 15 assemblages reach the point where large clusters require more than a month and 19 months respectively, to solve.  Beyond 15 assemblages, a ``combinatorial explosion'' sets in, with 20 assemblages requiring more than 3 million years, before solution times quickly exceed the lifetime of the universe.  
 
-In short, top-down enumerative methods are feasible for small sets of assemblages, and given widespread availability of multiple core computers, seriation packages should employ enumeration for small problems, or to build and test smaller parts of larger seriation solutions, as we describe in Section \ref{sec:algo-mult-large}.  
+In short, top-down enumerative methods are feasible for small sets of assemblages, and given widespread availability of multiple core computers, seriation packages should employ enumeration for small problems, or to build and test smaller parts of larger seriation solutions.  
 
 \section{Deterministic Seriation with Multiple Solution Groups}
 \label{sec:seriation-groups}
